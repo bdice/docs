@@ -83,7 +83,7 @@ Syntax for the `ignored_pr_jobs` is space-separated within the quotes.
 * Run the parsing and submission script job as the final job - after `pr-builder`:
 
 {% raw %}
-```
+```yaml
   telemetry-summarize:
     # This job must use a self-hosted runner to record telemetry traces.
     runs-on: linux-amd64-cpu4
@@ -96,7 +96,9 @@ Syntax for the `ignored_pr_jobs` is space-separated within the quotes.
 ```
 {% endraw %}
 
-> NOTE: pay special attention to the `runs-on` entry. This is what dictates that the job runs on a self-hosted runner, which is necessary for network access control.
+```{note}
+Pay special attention to the `runs-on` entry. This is what dictates that the job runs on a self-hosted runner, which is necessary for network access control.
+```
 
 * Optionally, add steps to your build scripts to copy additional contents to be
   bundled with your run results. For example, cudf uses a [special rapids
@@ -170,7 +172,7 @@ file, loaded in the `load-then-clone` action.
 At this level, we load the base environment variables and add our own, then run our process. The
 environment variables that we load ensures that if any build tool natively
 supports OpenTelemetry, it has the necessary information to send that data (job
-needs to be on a self-hosted runner)
+needs to be on a self-hosted runner).
 
 {% raw %}
 ```
@@ -237,7 +239,7 @@ Tempo backed by S3 to avoid ongoing upkeep requirements of a database server.
 
 #### Grafana dashboards
 
-Dashboards are made available by committing them to: https://github.com/nv-gha-runners/arc-nvks-argocd/tree/main/prometheus/resources
+Dashboards are made available by committing them to: https://github.com/nv-gha-runners/arc-nvks-argocd/tree/main/prometheus/resources.
 
 These files consist of a short YAML header:
 
@@ -260,7 +262,7 @@ Grafana has something called ["dashboard
 variables,"](https://grafana.com/docs/grafana/latest/dashboards/variables/)
 which serve to select some value for a particular dimension. Using this as the
 input to the data filters makes it easy to make multiple plots for different
-values of the variable (e.g. different machine labels or different RAPIDS repos)
+values of the variable (e.g. different machine labels or different RAPIDS repos).
 
 There is a gotcha with variables. Grafana has a way of automatically detecting
 values for variables - the "Query" variable type. This is the same as Tempo's [search tag values
@@ -359,12 +361,12 @@ Part of telemetry setup is providing environment variables that other tools that
 
 * `resource.rapids.labels` - These are the labels of the kind of machine that was used for the job. This filter removes "in-between" jobs, such as the matrix computation, and can also distinguish between build and test jobs.
 
-Workers with GPUs will be associated with test jobs
+Workers with GPUs will be associated with test jobs:
 ```
 {resource.rapids.labels =~ ".*gpu.*"}
 ```
 
-We'll call any other label "build"
+We'll call any other label "build":
 ```
 {resource.rapids.labels !~ ".*gpu.*" && resource.rapids.labels !~ ""}
 ```
@@ -451,7 +453,7 @@ API](https://docs.github.com/en/rest/actions/workflow-jobs?apiVersion=2022-11-28
 
 An example gh cli call that downloads this JSON output:
 
-```
+```bash
 gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" \
     --paginate /repos/rapidsai/cudf/actions/runs/<RUN_ID>/attempts/<RUN_ATTEMPT>/jobs | jq -c '.jobs' > all_jobs.json
 ```
@@ -467,33 +469,33 @@ you're interested in. The RUN_ATTEMPT is usually 1, unless you have retried the 
 
 6. Set key environment variables. At least two options:
 
-  * Set them on the terminal
+   - Set them on the terminal
 
-        ```
-    export OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4318"
-    export OTEL_EXPORTER_OTLP_PROTOCOL="http/protobuf"
-    export OTEL_TRACES_EXPORTER="otlp_proto_http"
-    ```
+     ```bash
+     export OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4318"
+     export OTEL_EXPORTER_OTLP_PROTOCOL="http/protobuf"
+     export OTEL_TRACES_EXPORTER="otlp_proto_http"
+     ```
 
-  * (OR) Use VS Code run configurations
+   - (OR) Use VS Code run configurations
 
-        ```
-        {
-            "name": "send-tempo",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "send_trace.py",
-            "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/telemetry-impls/summarize",
-            "justMyCode": false,
-            "env": {
-                "OTEL_EXPORTER_OTLP_ENDPOINT": "http://localhost:4318",
-                "OTEL_PYTHON_LOG_LEVEL": "DEBUG",
-                "OTEL_EXPORTER_OTLP_PROTOCOL": "http/protobuf",
-                "OTEL_TRACES_EXPORTER": "otlp_proto_http"
-            }
-        },
-    ```
+     ```json
+     {
+         "name": "send-tempo",
+         "type": "debugpy",
+         "request": "launch",
+         "program": "send_trace.py",
+         "console": "integratedTerminal",
+         "cwd": "${workspaceFolder}/telemetry-impls/summarize",
+         "justMyCode": false,
+         "env": {
+             "OTEL_EXPORTER_OTLP_ENDPOINT": "http://localhost:4318",
+             "OTEL_PYTHON_LOG_LEVEL": "DEBUG",
+             "OTEL_EXPORTER_OTLP_PROTOCOL": "http/protobuf",
+             "OTEL_TRACES_EXPORTER": "otlp_proto_http"
+         }
+     },
+     ```
 
 7. (optional) Run bump_time.py script to adjust timestamps in your
 `all_jobs.json` file. The Grafana UI shows data that is a certain amount of time

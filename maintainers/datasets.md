@@ -56,7 +56,9 @@ readDataset(rapidsDatasetRootDir + "/golden_data/web-BerkStan.pagerank_val_0.85.
 - Instructions on how to obtain the datasets (if they are not included with the source) should also be included in a README or similar document. Optionally, a description of each dataset should be included as well if it's useful.
 - Test authors should consider using test fixtures that have a `Setup()` method that ensures the datasets exist prior to accessing them. The `Setup()` method should throw an exception with the path to the dataset the test is using so users know to set or check one of the dataset location override mechanisms if necessary.
 
-*NOTE: At the moment, only the `cugraph` library has adopted the `get_rapids_dataset_root_dir()` functionality.*
+```{note}
+At the moment, only the `cugraph` library has adopted the `get_rapids_dataset_root_dir()` functionality.
+```
 
 ## Datasets for benchmarks
 

@@ -154,7 +154,7 @@ Where those inputs are defined as follows:
 * `{destination-directory}` = local directory the artifact's contents should be decompressed to
 
 The `{org}`, `{repo}`, and `{workflow-run-id}` can be found in the URL for CI jobs.
-Those URLs are of the form `https://github.com/{org}/{repo}/actions/runs/{workflow-run-id}`
+Those URLs are of the form `https://github.com/{org}/{repo}/actions/runs/{workflow-run-id}`.
 
 Valid values for `{artifact-name}` can be found on the "Actions" tab in the GitHub Actions UI, as described in "Finding Artifacts in the GitHub UI" above.
 The run IDs can also be identified programmatically.
@@ -433,8 +433,10 @@ Then copy the following into every script in the `ci/` directory that is doing `
 source ./ci/use_conda_packages_from_prs.sh
 ```
 
-**Note:** By default `rapids-get-pr-artifact` uses the most recent commit from the specified PR.
+```{note}
+By default `rapids-get-pr-artifact` uses the most recent commit from the specified PR.
 A commit hash from the dependent PR can be added as an optional 4th argument to pin testing to a specific commit.
+```
 
 **Example 3:** Testing `cudf` with a `noarch` build of `dask-cuda`
 
@@ -595,11 +597,15 @@ Then copy the following into every script in the `ci/` directory that is doing `
 source ./ci/use_wheels_from_prs.sh
 ```
 
-**Note:** By default `rapids-get-pr-artifact` uses the most recent commit from the specified PR.
+```{note}
+By default `rapids-get-pr-artifact` uses the most recent commit from the specified PR.
 A commit hash from the dependent PR can be added as an optional 4th argument to pin testing to a specific commit.
+```
 
-**Note:** Nearly all RAPIDS libraries use the stable ABI, so `rapids-get-pr-artifact` defaults to looking for `abi3` artifacts.
+```{note}
+Nearly all RAPIDS libraries use the stable ABI, so `rapids-get-pr-artifact` defaults to looking for `abi3` artifacts.
 For Python wheels that *don't* use the stable ABI, use the `--py` flag to instruct `rapids-get-pr-artifact` to look for Python version-specific artifacts. `rapids-get-pr-artifact` defaults to using `$RAPIDS_PY_VERSION` (set in all RAPIDS CI jobs) to look up the correct Python artifact (e.g. `cucim_wheel_python_cucim_x86_64_cp313_cu12`).
+```
 
 ## Skipping CI for Commits
 

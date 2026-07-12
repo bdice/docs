@@ -48,7 +48,7 @@ anaconda remove 'rapidsai-nightly/rapids-logger/0.2.27'
 
 ### Copy files from one channel to another
 
-The recommended install command for nightlies at time of writing is
+The recommended install command for nightlies at time of writing is:
 
 ```shell
 conda create -n rapids-26.04 -c rapidsai-nightly -c conda-forge rapids=26.04 python=3.13 'cuda-version>=13.0,<=13.1.1'

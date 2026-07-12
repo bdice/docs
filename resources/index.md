@@ -3,7 +3,6 @@
 Resources and detailed information referenced in other sections of this documentation.
 
 ```{toctree}
-:hidden:
 
 conduct
 changelog

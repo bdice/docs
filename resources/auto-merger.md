@@ -25,7 +25,9 @@ Sometimes these requests have merge conflicts that need to be resolved and we do
 
 In order to facilitate this use case the `/merge nosquash` comment has been implemented.
 
-*NOTE* The auto-merger will not run if the comment includes any other text besides `/merge` or `/merge nosquash`.
+```{note}
+The auto-merger will not run if the comment includes any other text besides `/merge` or `/merge nosquash`.
+```
 
 If the merge criteria below are satisfied when the comment is left on the pull request, the pull request will merge immediately.
 

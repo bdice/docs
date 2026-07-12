@@ -47,7 +47,9 @@ Burn down ends at 11:59 PM PT on the final day of the process.
 
 ### Process
 
-**NOTE:** The processes below use the current release of `YY.MA`, the next release of `YY.MB` and future release `YY.MC` (where `MB=MA+2`, `MC=MB+2`) for examples.
+```{note}
+The processes below use the current release of `YY.MA`, the next release of `YY.MB` and future release `YY.MC` (where `MB=MA+2`, `MC=MB+2`) for examples.
+```
 
 {bdg-info}`Project Leads`
 
@@ -62,7 +64,7 @@ Burn down ends at 11:59 PM PT on the final day of the process.
 3. Create release `YY.MC` project board
 4. Notify project leads process is complete
 
-Also see the [Burn down guide](/resources/burn-down-guide/)
+Also see the [Burn down guide](/resources/burn-down-guide/).
 
 
 ## Code freeze
@@ -79,7 +81,9 @@ Code freeze begins at 12:00AM PT the day immediately after Burn Down ends.
 For example, if Burn down runs from Wednesday Feb 3rd until Tuesday Feb 9th, then Burn down ends at 11:59PM PT on Feb 9th and Code Freeze begins 12:00AM PT Feb 10th.
 ### Process
 
-**NOTE:** The processes below use the current release of `YY.MA`, the next release of `YY.MB` and future release `YY.MC` (where `MB=MA+2`, `MC=MB+2`) for examples.
+```{note}
+The processes below use the current release of `YY.MA`, the next release of `YY.MB` and future release `YY.MC` (where `MB=MA+2`, `MC=MB+2`) for examples.
+```
 
 Generally the process for Code Freeze occurs around 10:00AM PT on the first day of Code Freeze.
 
@@ -109,7 +113,9 @@ For the selection of a `release date`, the general guidelines should be followed
 
 ### Process
 
-**NOTE:** The processes below use the current release of `YY.MA`, the next release of `YY.MB` and future release `YY.MC` (where `MB=MA+2`, `MC=MB+2`) for examples.
+```{note}
+The processes below use the current release of `YY.MA`, the next release of `YY.MB` and future release `YY.MC` (where `MB=MA+2`, `MC=MB+2`) for examples.
+```
 
 {bdg-info}`Project Leads`
 

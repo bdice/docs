@@ -121,10 +121,12 @@ gh auth login
   ...
 ```
 
-NOTE: On shared machines, this method might expose your GitHub token in the output of `ps`. In those settings,
+```{note}
+On shared machines, this method might expose your GitHub token in the output of `ps`. In those settings,
 consider just relying on the interactive prompts inside the container or using the `--env-file` approach.
+```
 
-For more details, see "GitHub Actions" ([link](./github-actions.md)).
+For more details, see [GitHub Actions](/resources/github-actions/).
 
 ### Downloading Build Artifacts for Tests
 
@@ -204,9 +206,11 @@ For example, some use `conda` recipes that rely on the mechanisms described in [
 
 When those tags are unavailable, builds might fail with errors similar to this:
 
-> Error: Failed to render jinja template in /repo/conda/recipes/libcudf/meta.yaml:
-> 'GIT_DESCRIBE_NUMBER' is undefined
-> conda returned exit code: 1
+```text
+Error: Failed to render jinja template in /repo/conda/recipes/libcudf/meta.yaml:
+'GIT_DESCRIBE_NUMBER' is undefined
+conda returned exit code: 1
+```
 
 To fix that, pull the latest set of tags from the upstream repo.
 

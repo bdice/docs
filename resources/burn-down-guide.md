@@ -59,7 +59,7 @@ Update the gpuCI configuration file to include the `branch-0.B`. Then run the RA
 
 Update each of the [forward-mergers](https://gpuci.gpuopenanalytics.com/view/gpuCI%20-%20forward-mergers/) to merge from `0.A` to `0.B`.
 
-Make sure to update all of the following
+Make sure to update all of the following:
 * Job name
 * Job description
 * SCM Branch
@@ -77,7 +77,7 @@ Suggested template:
 :warning: cuDF/cuML/cuGraph/RMM/cuStrings/dask-cuda v0.9 have moved to the burn down stage - `branch-0.10` is available but *not the default branch yet*
 
 *Burn down ends Tuesday, August 13*
-See https://docs.rapids.ai/maintainers for full v0.9 schedule
+See https://docs.rapids.ai/maintainers for full v0.9 schedule.
 
 Please keep the following in mind:
 - *Stop adding issues/PRs for v0.9*; unless deemed critical by the PICs

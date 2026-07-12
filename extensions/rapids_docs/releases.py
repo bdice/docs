@@ -37,8 +37,8 @@ def _current_schedules(data: dict) -> str:
     return "\n\n".join(
         [
             f"## Release v{releases['nightly']['version']} Schedule",
-            "**NOTE:** *Dates are subject to change at any time. Completed release schedules are posted "
-            "[here](/releases/schedule/).*",
+            "```{note}\nDates are subject to change at any time. Completed release schedules are posted "
+            "[here](/releases/schedule/).\n```",
             _schedule_table(releases["nightly"]),
             f"## *PROPOSED* Release v{releases['next_nightly']['version']} Schedule",
             _schedule_table(releases["next_nightly"]),

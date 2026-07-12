@@ -56,7 +56,7 @@ The description should provide any context not found in the issue description.
 
 ### Comments
 
-All pull request comments and reviews must follow the [Code of Conduct](/resources/conduct/)
+All pull request comments and reviews must follow the [Code of Conduct](/resources/conduct/).
 
 ## Lifecycle
 

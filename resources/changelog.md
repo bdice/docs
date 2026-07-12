@@ -32,7 +32,7 @@ In order to correctly categorize pull requests, the following labels must be app
 
 #### `category` Label (choose one):
 
-Categorizes the PR in the pre-release
+Categorizes the PR in the pre-release.
 
 - `bug`
 - `doc`
@@ -41,9 +41,11 @@ Categorizes the PR in the pre-release
 
 #### `breaking` Label (choose one):
 
-Determines if there is a "breaking" change to user functionality
+Determines if there is a "breaking" change to user functionality.
 
-**NOTE:** Developers should consult with their PICs for a repo specific set of guidelines for determining a "breaking" change
+```{note}
+Developers should consult with their PICs for a repo specific set of guidelines for determining a "breaking" change.
+```
 
 - `breaking`
 - `non-breaking`

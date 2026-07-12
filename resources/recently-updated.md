@@ -1,4 +1,4 @@
-# _Recently Updated_ Check
+# Recently Updated Check
 
 ## Overview
 
@@ -22,13 +22,13 @@ Therefore, if a pull request is not up-to-date with the latest changes in the so
 
 GitHub does provide a way to ensure that pull requests are entirely up-to-date before merging, but for high volume repositories like `cudf`, this would dramatically increase the amount of time it takes to get a pull request merged.
 
-As a compromise, the _Recently Updated_ check has been introduced to ensure that pull requests are "reasonably up-to-date" with the corresponding source repository.
+As a compromise, the Recently Updated check has been introduced to ensure that pull requests are "reasonably up-to-date" with the corresponding source repository.
 
 This method doesn't guarantee that breaking changes will not be introduced, but it does help provide some assurances that pull requests aren't significantly out-of-date (similar to how testing merge commits work).
 
 Additional testing confidence comes from RAPIDS' nightly testing, which tests the _HEAD_ commit of each development branch.
 
-The _Recently Updated_ check is configurable by editing the following values in the `.github/ops-bot.yaml` file:
+The Recently Updated check is configurable by editing the following values in the `.github/ops-bot.yaml` file:
 
 ```yaml
 # enables/disables the Recently Updated Check

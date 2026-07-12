@@ -1,4 +1,4 @@
-# _Merge Barriers_ Check
+# Merge Barriers Check
 
 ## Overview
 
@@ -18,7 +18,7 @@ A GitHub action that checks whether a pull-request is up-to-date with the any me
 
 Pull requests can be explicitly marked as "merge barriers" to be required to be merged into a pull request before it can be merged. This is used for pull requests that have wide-reaching implications, such as broad reformatting or linting, which are highly likely to cause logical merge conflicts with many other pull requests.
 
-The _Merge Barriers_ check is configurable by editing the following value in the `.github/ops-bot.yaml` file:
+The Merge Barriers check is configurable by editing the following value in the `.github/ops-bot.yaml` file:
 
 ```yaml
 # enables/disables the Merge Barriers Check
