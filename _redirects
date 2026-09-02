@@ -14,8 +14,8 @@
 /api/cuspatial/ /api/cuspatial/stable/
 /api/cuxfilter /api/cuxfilter/stable/
 /api/cuxfilter/ /api/cuxfilter/stable/
-/api/dask-cuda /api/dask-cuda/stable/
-/api/dask-cuda/ /api/dask-cuda/stable/
+/api/dask-cuda https://docs.nvidia.com/dask-cuda/ 301!
+/api/dask-cuda/ https://docs.nvidia.com/dask-cuda/ 301!
 /api/dask-cuda/nightly https://docs.nvidia.com/dask-cuda/latest/ 301!
 /api/dask-cuda/nightly/* https://docs.nvidia.com/dask-cuda/latest/:splat 301!
 /api/dask-cuda/stable https://docs.nvidia.com/dask-cuda/latest/ 301!
